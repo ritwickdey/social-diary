@@ -5,7 +5,7 @@ export class EditBlogPage extends React.Component {
   render() {
     return (
       <div>
-        Edit Blog Page
+        Edit Blog Page. id: {this.props.match.params.id}
         <BlogForm />
       </div>
     );

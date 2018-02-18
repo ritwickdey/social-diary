@@ -1,7 +1,13 @@
 import React from 'react';
+import { Header } from './Header';
 
 export class DashboardPage extends React.Component {
   render() {
-    return <div>This is DashboardPage Page</div>;
+    return (
+      <div>
+        <Header />
+        <p>This is DashboardPage Page</p>
+      </div>
+    );
   }
 }
