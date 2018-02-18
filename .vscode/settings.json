@@ -1,3 +1,7 @@
 {
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
 }
