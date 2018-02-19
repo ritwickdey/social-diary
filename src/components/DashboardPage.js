@@ -1,12 +1,11 @@
 import React from 'react';
-import { Header } from './Header';
+import BlogList from './BlogList';
 
 export class DashboardPage extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <p>This is DashboardPage Page</p>
+        <BlogList />
       </div>
     );
   }
