@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import 'react-dates/initialize';
 // import logo from './logo.svg';
 import './App.css';
 import { AppRouter } from './routes/AppRouter';
 
 import { store } from './store/configureStore';
 import { addBlog, editBlog, deleteBlog } from './actions/blogs';
+import {
+  setDescOrder,
+  setAscOrder,
+  setEndDate,
+  setFilterText,
+  setStartDate,
+  setSortByDate,
+  setSortByTitle
+} from './actions/filters';
 
 const appStore = store();
 
@@ -28,6 +38,12 @@ appStore.dispatch(
     body: '........... 3 ...............'
   })
 );
+// appStore.dispatch(setFilterText('hi'));
+// appStore.dispatch(setDescOrder());
+// appStore.dispatch(setStartDate(Date.now()));
+// appStore.dispatch(setEndDate(Date.now()));
+// appStore.dispatch(setSortByTitle());
+// appStore.dispatch(setSortByDate());
 
 // appStore.dispatch(deleteBlog(2));
 // appStore.dispatch(deleteBlog(5));
