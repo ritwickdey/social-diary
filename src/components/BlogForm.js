@@ -55,7 +55,7 @@ export class BlogForm extends React.Component {
               placeholder="What is happening?"
             />
           </div>
-          <button type="submit">Create</button>
+          <button type="submit">{this.props.submitBtnTitle || 'Create'}</button>
         </form>
       </div>
     );

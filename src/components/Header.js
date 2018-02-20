@@ -8,7 +8,6 @@ export class Header extends React.Component {
         <h1>My Blog</h1>
         <NavLink to="/">Dashboard</NavLink>
         <NavLink to="/create">Add Blog</NavLink>
-        <NavLink to="/edit/15">Edit Blog</NavLink>
         <NavLink to="/login">login</NavLink>
       </div>
     );

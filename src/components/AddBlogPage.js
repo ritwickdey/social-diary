@@ -12,7 +12,10 @@ class AddBlogPage extends React.Component {
     return (
       <div>
         <h3>Add Blog</h3>
-        <BlogForm onSubmit={this.onSubmitHandler} />
+        <BlogForm
+          submitBtnTitle="Create Blog"
+          onSubmit={this.onSubmitHandler}
+        />
       </div>
     );
   }
