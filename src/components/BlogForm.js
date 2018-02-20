@@ -1,30 +1,34 @@
 import React from 'react';
 
 export class BlogForm extends React.Component {
-  defaultState = () => ({ title: '', blog: '', error: undefined });
+  defaultState = () => ({ title: '', body: '', error: undefined });
 
-  state = { ...this.defaultState() };
+  state = {
+    ...this.defaultState(),
+    title: this.props.blog ? this.props.blog.title : '',
+    body: this.props.blog ? this.props.blog.body : ''
+  };
 
   onTitleChange = e => {
     const title = e.target.value;
     this.setState(() => ({ title }));
   };
 
-  onBlogChange = e => {
-    const blog = e.target.value;
-    this.setState(() => ({ blog }));
+  onBodyChange = e => {
+    const body = e.target.value;
+    this.setState(() => ({ body }));
   };
 
   onSubmitHandler = e => {
     e.preventDefault();
     const title = this.state.title.trim();
-    const blog = this.state.blog.trim();
-    if (!title || !blog) {
+    const body = this.state.body.trim();
+    if (!title || !body) {
       return this.setState(() => ({
-        error: 'Both title & blog fields are requried'
+        error: 'Both title & body fields are requried'
       }));
     }
-    this.props.onSubmit({ title, body: blog });
+    this.props.onSubmit({ title, body: body });
     this.setState(() => ({ ...this.defaultState() }));
   };
 
@@ -39,17 +43,15 @@ export class BlogForm extends React.Component {
               value={this.state.title}
               type="text"
               name="title"
-              id="title"
               placeholder="Blog Title"
             />
           </div>
           <div>
             <textarea
-              onChange={this.onBlogChange}
-              value={this.state.blog}
+              onChange={this.onBodyChange}
+              value={this.state.body}
               type="text"
-              name="blog"
-              id="blog"
+              name="body"
               placeholder="What is happening?"
             />
           </div>
