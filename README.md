@@ -1,6 +1,5 @@
 # My Blog 
-
-A simple Blog App.
+A simple Blog App
 
 
 
