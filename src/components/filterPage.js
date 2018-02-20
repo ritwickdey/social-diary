@@ -24,15 +24,42 @@ class FilterPage extends Component {
 
   onCalenderFocusChange = calenderFocus => this.setState({ calenderFocus });
 
+  onSearchTextChange = e => {
+    const text = (e.target.value || '').trim();
+    if (text) this.props.setFilterText(text);
+  };
+
+  onSortByChanges = e => {
+    if (e.target.value === 'title') this.props.setSortByTitle();
+    else this.props.setSortByDate();
+  };
+
+  onOrderByChange = e => {
+    if (e.target.value === 'desc') this.props.setDescOrder();
+    else this.props.setAscOrder();
+  };
+
   render() {
     return (
       <div>
-        <input type="text" placeholder="search" />
-        <select name="sortBy">
-          <option value="name">Name</option>
+        <input
+          type="text"
+          onChange={this.onSearchTextChange}
+          placeholder="search"
+        />
+        <select
+          onChange={this.onSortByChanges}
+          value={this.props.filters.sortBy}
+          name="sortBy"
+        >
           <option value="date">Date</option>
+          <option value="title">Title</option>
         </select>
-        <select name="orderBy">
+        <select
+          onChange={this.onOrderByChange}
+          value={this.props.filters.orderBy}
+          name="orderBy"
+        >
           <option value="asc">A-Z</option>
           <option value="desc">Z-A</option>
         </select>
