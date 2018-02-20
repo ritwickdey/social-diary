@@ -21,10 +21,10 @@ export const setFilterText = filterText => ({
   filterText
 });
 
-export const setSortByDate = filterText => ({
+export const setSortByDate = () => ({
   type: 'SET_SORT_BY_DATE'
 });
 
-export const setSortByTitle = filterText => ({
+export const setSortByTitle = () => ({
   type: 'SET_SORT_BY_TITLE'
 });

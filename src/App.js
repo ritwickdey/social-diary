@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import 'react-dates/initialize';
 // import logo from './logo.svg';
+import 'react-dates/lib/css/_datepicker.css';
+
 import './App.css';
 import { AppRouter } from './routes/AppRouter';
 

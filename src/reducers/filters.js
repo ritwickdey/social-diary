@@ -1,7 +1,9 @@
+import moment from 'moment';
+
 const defaultFilterBlogState = () => ({
   filterText: '',
-  startDate: undefined,
-  endDate: undefined,
+  startDate: moment().startOf('month'),
+  endDate: moment().endOf('month'),
   orderBy: 'asc',
   sortBy: 'date'
 });
