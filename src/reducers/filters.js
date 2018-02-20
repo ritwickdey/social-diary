@@ -2,7 +2,8 @@ const defaultFilterBlogState = () => ({
   filterText: '',
   startDate: undefined,
   endDate: undefined,
-  orderBy: 'asc'
+  orderBy: 'asc',
+  sortBy: 'date'
 });
 
 export const filterBlogReducers = (
@@ -16,6 +17,10 @@ export const filterBlogReducers = (
       return { ...state, endDate: action.endDate };
     case 'SET_ASC_ORDER_BY':
       return { ...state, orderBy: 'asc' };
+    case 'SET_SORT_BY_TITLE':
+      return { ...state, sortBy: 'title' };
+    case 'SET_SORT_BY_DATE':
+      return { ...state, sortBy: 'date' };
     case 'SET_DESC_ORDER_BY':
       return { ...state, orderBy: 'desc' };
     case 'SET_FILTER_TEXT':

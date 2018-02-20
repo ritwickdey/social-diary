@@ -20,3 +20,11 @@ export const setFilterText = filterText => ({
   type: 'SET_FILTER_TEXT',
   filterText
 });
+
+export const setSortByDate = filterText => ({
+  type: 'SET_SORT_BY_DATE'
+});
+
+export const setSortByTitle = filterText => ({
+  type: 'SET_SORT_BY_TITLE'
+});
