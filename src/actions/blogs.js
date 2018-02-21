@@ -47,16 +47,13 @@ export const startDeleteBlog = id => {
 const setBlogs = blogs => ({ type: 'SET_BLOGS', blogs });
 
 export const startSetBlogs = () => {
-  return dispatch => {
+  return dispatch =>
     db
       .collection('/blogs')
       .get()
       .then(results => {
         const blogs = [];
-        results.forEach(e =>
-          blogs.push({ ...e.data(), id: e.id })
-        );
-        dispatch(setBlogs(blogs));
+        results.forEach(e => blogs.push({ ...e.data(), id: e.id }));
+        return dispatch(setBlogs(blogs));
       });
-  };
 };

@@ -7,30 +7,29 @@ import './App.css';
 import { AppRouter } from './routes/AppRouter';
 import firebase from './firebase/firestore';
 import { store } from './store/configureStore';
-import { startSetBlogs  } from './actions/blogs';
+import { startSetBlogs } from './actions/blogs';
 import { loginUser, logoutUser } from './actions/user';
 
-const appStore = store();
-
-appStore.subscribe(() => console.log(appStore.getState()));
-
-firebase.auth().onAuthStateChanged(user => {
-  if (user) {
-    appStore.dispatch(loginUser(user));
-    console.log('user logged in', user);
-  } else {
-    console.log('logged out');
-    appStore.dispatch(logoutUser());
-  }
-});
-
-appStore.dispatch(startSetBlogs());
-
 class App extends Component {
+  appStore = store();
+
+  state = { isLoaded: false };
+
+  componentDidMount() {
+    this.appStore.subscribe(() => console.log(this.appStore.getState()));
+    this.appStore.dispatch(startSetBlogs()).then(() => {
+      this.setState({ isLoaded: true });
+    });
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) this.appStore.dispatch(loginUser(user));
+      else this.appStore.dispatch(logoutUser());
+    });
+  }
+
   render() {
     return (
-      <Provider store={appStore}>
-        <AppRouter />
+      <Provider store={this.appStore}>
+        {this.state.isLoaded ? <AppRouter /> : <p>Loading...</p>}
       </Provider>
     );
   }
