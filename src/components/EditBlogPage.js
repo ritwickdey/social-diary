@@ -1,17 +1,16 @@
 import React from 'react';
 import { BlogForm } from './BlogForm';
 import { connect } from 'react-redux';
-import { editBlog, deleteBlog } from '../actions/blogs';
+import { startEditBlog, startDeleteBlog } from '../actions/blogs';
 
 class EditBlogPage extends React.Component {
   onDeleteHandle = () => {
     if (!window.confirm('are you sure to delete?')) return;
-    console.log('delete');
-    this.props.deleteBlog(this.props.blog.id);
+    this.props.startDeleteBlog(this.props.blog.id);
     this.props.history.push('/');
   };
   onSubmitHandle = blog => {
-    this.props.editBlog(this.props.blog.id, blog);
+    this.props.startEditBlog(this.props.blog.id, blog);
     this.props.history.push('/');
   };
   render() {
@@ -35,8 +34,8 @@ const mapStateToProp = (state, props) => {
 };
 
 const mapDispatchToProp = dispatch => ({
-  editBlog: (id, updates) => dispatch(editBlog(id, updates)),
-  deleteBlog: id => dispatch(deleteBlog(id))
+  startEditBlog: (id, updates) => dispatch(startEditBlog(id, updates)),
+  startDeleteBlog: id => dispatch(startDeleteBlog(id))
 });
 
 export default connect(mapStateToProp, mapDispatchToProp)(EditBlogPage);

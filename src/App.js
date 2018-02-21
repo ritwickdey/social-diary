@@ -10,70 +10,56 @@ import { AppRouter } from './routes/AppRouter';
 import firebase from './firebase/firestore';
 
 import { store } from './store/configureStore';
-import { addBlog, editBlog, deleteBlog } from './actions/blogs';
-import {
-  setDescOrder,
-  setAscOrder,
-  setEndDate,
-  setFilterText,
-  setStartDate,
-  setSortByDate,
-  setSortByTitle
-} from './actions/filters';
+import { startAddBlog } from './actions/blogs';
+import { loginUser, logoutUser } from './actions/user';
 
 const appStore = store();
 
 appStore.subscribe(() => console.log(appStore.getState()));
 
 appStore.dispatch(
-  addBlog({
+  startAddBlog({
     id: 7,
     title: 'my Title',
     postedAt: moment()
       .startOf('week')
       .valueOf(),
-    body: '........... ...............'
+    body: '........... ...............',
+    uId: 4546
   })
 );
 
 appStore.dispatch(
-  addBlog({
+  startAddBlog({
     id: 5,
     title: 'some Title 2',
     postedAt: moment()
       .endOf('week')
       .valueOf(),
-    body: '........... 3 ...............'
+    body: '........... 3 ...............',
+    uId: 1455
   })
 );
 
 appStore.dispatch(
-  addBlog({
-    id: 5,
+  startAddBlog({
+    id: 8,
     title: 'my Blogging',
     postedAt: moment().valueOf(),
-    body: 'foooooooooooo'
+    body: 'foooooooooooo',
+    uId: 64
   })
 );
-// appStore.dispatch(setFilterText('hi'));
-// appStore.dispatch(setDescOrder());
-// appStore.dispatch(setStartDate(Date.now()));
-// appStore.dispatch(setEndDate(Date.now()));
-// appStore.dispatch(setSortByTitle());
-// appStore.dispatch(setSortByDate());
 
-// appStore.dispatch(deleteBlog(2));
-// appStore.dispatch(deleteBlog(5));
-// appStore.dispatch(
-//   editBlog(7, {
-//     body: 'bla',
-//     title: 'foo title'
-//   })
-// );
 
 firebase.auth().onAuthStateChanged(user => {
-  if (user) console.log('user logged in', user);
-  else console.log('logged out');
+  if (user) {
+    appStore.dispatch(loginUser(user));
+    console.log('user logged in', user);
+  } else {
+    console.log('logged out');
+    appStore.dispatch(logoutUser());
+  }
 });
 
 class App extends Component {
