@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-export const BlogListItem = ({ blog }) => (
+export const BlogListItem = props => (
   <div>
     <h4>
-      <Link to={'/edit/' + blog.id}>{blog.title}</Link>
+      <Link to={(props.nextUrl || '/read/') + props.blog.id}>
+        {props.blog.title}
+      </Link>
     </h4>
-    <p>{moment(blog.postedAt).format('DD MMM YYYY')}</p>
+    <p>{moment(props.blog.postedAt).format('DD MMM YYYY')}</p>
   </div>
 );

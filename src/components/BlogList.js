@@ -7,7 +7,9 @@ const BlogList = props => {
       {props.blogs.length === 0 ? (
         <p>No Blogs </p>
       ) : (
-        props.blogs.map(blog => <BlogListItem key={blog.id} blog={blog} />)
+        props.blogs.map(blog => (
+          <BlogListItem {...props} key={blog.id} blog={blog} />
+        ))
       )}
     </div>
   );

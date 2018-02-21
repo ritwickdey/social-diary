@@ -9,7 +9,7 @@ import { getMyBlogs } from '../selectors/blogs';
 const MyBlogPage = props => (
   <div>
     <FilterPage />
-    <BlogList blogs={props.blogs} />
+    <BlogList nextUrl="/edit/" blogs={props.blogs} />
   </div>
 );
 
