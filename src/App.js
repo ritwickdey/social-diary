@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import moment from 'moment';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 import './App.css';
 import { AppRouter } from './routes/AppRouter';
-import firebase, { db } from './firebase/firestore';
+import firebase from './firebase/firestore';
 import { store } from './store/configureStore';
 import { startSetBlogs  } from './actions/blogs';
 import { loginUser, logoutUser } from './actions/user';
