@@ -1,3 +1,5 @@
+import firebase, { googleProvider } from '../firebase/firestore';
+
 export const loginUser = userDetails => ({
   type: 'LOGIN',
   user: {
@@ -6,6 +8,22 @@ export const loginUser = userDetails => ({
   }
 });
 
-export const logoutUser = userDetails => ({
+export const startLogin = () => {
+  return dispatch =>
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then(result => dispatch(loginUser(result.user)));
+};
+
+export const logoutUser = () => ({
   type: 'LOGOUT'
 });
+
+export const startLogout = () => {
+  return dispatch =>
+    firebase
+      .auth()
+      .signOut()
+      .then(() => logoutUser());
+};
