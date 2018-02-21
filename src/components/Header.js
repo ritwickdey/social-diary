@@ -20,7 +20,12 @@ const Header = props => {
           login
         </NavLink>
       ) : (
-        <button onClick={() => props.startLogout()}>logout</button>
+        <span>
+          <NavLink style={navLinkstyle} to="/myBlogs">
+            My Blogs
+          </NavLink>
+          <button onClick={() => props.startLogout()}>logout</button>
+        </span>
       )}
     </div>
   );
