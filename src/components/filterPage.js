@@ -25,8 +25,10 @@ class FilterPage extends Component {
   onCalenderFocusChange = calenderFocus => this.setState({ calenderFocus });
 
   onSearchTextChange = e => {
-    const text = (e.target.value || '').trim();
-    if (text) this.props.setFilterText(text);
+    const text = e.target.value || '';
+    const trimmedText = text.trim();
+    if (trimmedText) this.props.setFilterText(text);
+    else this.props.setFilterText('');
   };
 
   onSortByChanges = e => {
@@ -44,6 +46,7 @@ class FilterPage extends Component {
       <div>
         <input
           type="text"
+          value={this.props.filters.filterText}
           onChange={this.onSearchTextChange}
           placeholder="search"
         />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import moment from 'moment';
 import 'react-dates/initialize';
 // import logo from './logo.svg';
 import 'react-dates/lib/css/_datepicker.css';
@@ -27,7 +28,7 @@ appStore.dispatch(
   addBlog({
     id: 7,
     title: 'my Title',
-    postedAt: 66,
+    postedAt: moment().startOf('week').valueOf(),
     body: '........... ...............'
   })
 );
@@ -35,9 +36,18 @@ appStore.dispatch(
 appStore.dispatch(
   addBlog({
     id: 5,
-    title: 'my Title 2',
-    postedAt: 664,
+    title: 'some Title 2',
+    postedAt: moment().endOf('week').valueOf(),
     body: '........... 3 ...............'
+  })
+);
+
+appStore.dispatch(
+  addBlog({
+    id: 5,
+    title: 'my Blogging',
+    postedAt: moment().valueOf(),
+    body: 'foooooooooooo'
   })
 );
 // appStore.dispatch(setFilterText('hi'));

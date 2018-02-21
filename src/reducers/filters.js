@@ -4,7 +4,7 @@ const defaultFilterBlogState = () => ({
   filterText: '',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month'),
-  orderBy: 'asc',
+  orderBy: 'desc',
   sortBy: 'date'
 });
 
