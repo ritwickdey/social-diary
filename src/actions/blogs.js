@@ -1,3 +1,5 @@
+import { db } from '../firebase/firestore';
+
 const addBlog = ({
   id = Date.now(),
   title = '',
@@ -11,7 +13,14 @@ const addBlog = ({
 
 export const startAddBlog = blog => {
   return (dispatch, getState) => {
-    return dispatch(addBlog(blog));
+    blog.uId = getState().user.uid;
+    db
+      .collection('/blogs')
+      .add(blog)
+      .then(result => {
+        blog.id = result.id;
+        return dispatch(addBlog(blog));
+      });
   };
 };
 

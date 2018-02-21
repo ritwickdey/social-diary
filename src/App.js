@@ -17,40 +17,6 @@ const appStore = store();
 
 appStore.subscribe(() => console.log(appStore.getState()));
 
-appStore.dispatch(
-  startAddBlog({
-    id: 7,
-    title: 'my Title',
-    postedAt: moment()
-      .startOf('week')
-      .valueOf(),
-    body: '........... ...............',
-    uId: 4546
-  })
-);
-
-appStore.dispatch(
-  startAddBlog({
-    id: 5,
-    title: 'some Title 2',
-    postedAt: moment()
-      .endOf('week')
-      .valueOf(),
-    body: '........... 3 ...............',
-    uId: 1455
-  })
-);
-
-appStore.dispatch(
-  startAddBlog({
-    id: 8,
-    title: 'my Blogging',
-    postedAt: moment().valueOf(),
-    body: 'foooooooooooo',
-    uId: 64
-  })
-);
-
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     appStore.dispatch(loginUser(user));
