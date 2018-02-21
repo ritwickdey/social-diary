@@ -7,6 +7,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 import './App.css';
 import { AppRouter } from './routes/AppRouter';
+import firebase from './firebase/firestore';
 
 import { store } from './store/configureStore';
 import { addBlog, editBlog, deleteBlog } from './actions/blogs';
@@ -28,7 +29,9 @@ appStore.dispatch(
   addBlog({
     id: 7,
     title: 'my Title',
-    postedAt: moment().startOf('week').valueOf(),
+    postedAt: moment()
+      .startOf('week')
+      .valueOf(),
     body: '........... ...............'
   })
 );
@@ -37,7 +40,9 @@ appStore.dispatch(
   addBlog({
     id: 5,
     title: 'some Title 2',
-    postedAt: moment().endOf('week').valueOf(),
+    postedAt: moment()
+      .endOf('week')
+      .valueOf(),
     body: '........... 3 ...............'
   })
 );
@@ -65,6 +70,11 @@ appStore.dispatch(
 //     title: 'foo title'
 //   })
 // );
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) console.log('user logged in', user);
+  else console.log('logged out');
+});
 
 class App extends Component {
   render() {

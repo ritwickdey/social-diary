@@ -1,11 +1,12 @@
 export const addBlog = ({
-  id = 0,
+  id = Date.now(),
   title = '',
   postedAt = Date.now(),
-  body = ''
+  body = '',
+  uId = ''
 } = {}) => ({
   type: 'ADD_BLOG',
-  blog: { id: Date.now(), title, body, postedAt }
+  blog: { id, title, body, postedAt, uId }
 });
 
 export const editBlog = (id, { title, body }) => ({
