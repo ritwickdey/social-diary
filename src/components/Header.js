@@ -2,13 +2,20 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export class Header extends React.Component {
+  navLinkstyle = { paddingRight: '10px' };
   render() {
     return (
-      <div>
+      <div style={{ marginBottom: '10px' }}>
         <h1>My Blog</h1>
-        <NavLink to="/">Dashboard</NavLink>
-        <NavLink to="/create">Add Blog</NavLink>
-        <NavLink to="/login">login</NavLink>
+        <NavLink style={this.navLinkstyle} to="/">
+          Dashboard
+        </NavLink>
+        <NavLink style={this.navLinkstyle} to="/create">
+          Add Blog
+        </NavLink>
+        <NavLink style={this.navLinkstyle} to="/login">
+          login
+        </NavLink>
       </div>
     );
   }
