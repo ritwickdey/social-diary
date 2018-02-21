@@ -1,9 +1,9 @@
-export const userReducers = (state = {}, action) => {
+export const userReducers = (state = null, action) => {
   switch (action.type) {
     case 'LOGIN':
       return { ...action.user };
     case 'LOGOUT':
-      return {};
+      return null;
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
@@ -15,16 +15,23 @@ const Header = props => {
       <NavLink style={navLinkstyle} to="/create">
         Add Blog
       </NavLink>
-      <NavLink style={navLinkstyle} to="/login">
-        login
-      </NavLink>
-      <button onClick={() => props.startLogout()}>logout</button>
+      {!props.user ? (
+        <NavLink style={navLinkstyle} to="/login">
+          login
+        </NavLink>
+      ) : (
+        <button onClick={() => props.startLogout()}>logout</button>
+      )}
     </div>
   );
 };
+
+const mapStateToProps = state => ({
+  user: state.user
+});
 
 const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default connect(undefined, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

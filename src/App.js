@@ -51,7 +51,6 @@ appStore.dispatch(
   })
 );
 
-
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     appStore.dispatch(loginUser(user));
