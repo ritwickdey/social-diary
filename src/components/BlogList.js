@@ -15,9 +15,4 @@ const BlogList = props => {
   );
 };
 
-// const mapStateToProp = state => ({
-//   blogs: filterBlogs(state.blogs, state.filters)
-// });
-
-// export default connect(mapStateToProp)(BlogList);
 export default BlogList;
