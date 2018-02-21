@@ -1,14 +1,16 @@
 import React from 'react';
-import firebase, { googleProvider } from '../firebase/firestore';
+import { connect } from 'react-redux';
 
-export class LoginPage extends React.Component {
-  render() {
-    return (
-      <div>
-        <button onClick={() => firebase.auth().signInWithPopup(googleProvider)}>
-          Login with Google
-        </button>
-      </div>
-    );
-  }
-}
+import { startLogin } from '../actions/user';
+
+const LoginPage = props => (
+  <div>
+    <button onClick={() => props.startLogin()}>Login with Google</button>
+  </div>
+);
+
+const mapDispatchToProps = dispatch => ({
+  startLogin: () => dispatch(startLogin())
+});
+
+export default connect(undefined, mapDispatchToProps)(LoginPage);
