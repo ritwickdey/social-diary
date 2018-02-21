@@ -5,7 +5,10 @@ import { connect } from 'react-redux';
 const ReadBlogPage = props => (
   <div>
     <h2>{props.blog.title}</h2>
-    <div>{moment(props.blog.postedAt).format('DD MMM YYYY')}</div>
+    <div>
+      {props.blog.uName} {' | '}
+      {moment(props.blog.postedAt).format('DD MMM YYYY')}
+    </div>
     <p>{props.blog.body}</p>
   </div>
 );

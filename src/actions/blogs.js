@@ -5,15 +5,18 @@ const addBlog = ({
   title = '',
   postedAt = Date.now(),
   body = '',
-  uId = ''
+  uId = '',
+  uName = ''
 } = {}) => ({
   type: 'ADD_BLOG',
-  blog: { id, title, body, postedAt, uId }
+  blog: { id, title, body, postedAt, uId, uName }
 });
 
 export const startAddBlog = blog => {
   return (dispatch, getState) => {
-    blog.uId = getState().user.uid;
+    const { user: { uid, name } } = getState();
+    blog.uId = uid;
+    blog.uName = name;
     db
       .collection('/blogs')
       .add(blog)
