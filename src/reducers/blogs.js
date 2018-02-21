@@ -9,6 +9,8 @@ export const blogReducers = (state = [], action) => {
         e =>
           e.id !== action.id ? e : { ...e, ...action.updates, id: action.id }
       );
+    case 'SET_BLOGS':
+      return [...action.blogs];
 
     default:
       return [...state];

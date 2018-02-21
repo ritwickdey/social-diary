@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import moment from 'moment';
 import 'react-dates/initialize';
-// import logo from './logo.svg';
 import 'react-dates/lib/css/_datepicker.css';
 
 import './App.css';
 import { AppRouter } from './routes/AppRouter';
-import firebase from './firebase/firestore';
-
+import firebase, { db } from './firebase/firestore';
 import { store } from './store/configureStore';
-import { startAddBlog } from './actions/blogs';
+import { startSetBlogs  } from './actions/blogs';
 import { loginUser, logoutUser } from './actions/user';
 
 const appStore = store();
@@ -26,6 +24,8 @@ firebase.auth().onAuthStateChanged(user => {
     appStore.dispatch(logoutUser());
   }
 });
+
+appStore.dispatch(startSetBlogs());
 
 class App extends Component {
   render() {
