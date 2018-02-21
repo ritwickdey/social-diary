@@ -8,7 +8,7 @@ const Header = props => {
   const navLinkstyle = { paddingRight: '10px' };
   return (
     <div style={{ marginBottom: '10px' }}>
-      <h1>My Blog</h1>
+      <h1>Social Blogs</h1>
       <NavLink style={navLinkstyle} to="/">
         Dashboard
       </NavLink>
