@@ -7,11 +7,11 @@ class EditBlogPage extends React.Component {
   onDeleteHandle = () => {
     if (!window.confirm('are you sure to delete?')) return;
     this.props.startDeleteBlog(this.props.blog.id);
-    this.props.history.push('/');
+    this.props.history.push('/myBlogs');
   };
   onSubmitHandle = blog => {
     this.props.startEditBlog(this.props.blog.id, blog);
-    this.props.history.push('/');
+    this.props.history.push('/myBlogs');
   };
   render() {
     return (

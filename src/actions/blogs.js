@@ -33,19 +33,21 @@ const editBlog = (id, { title, body }) => ({
   updates: { title, body }
 });
 
-export const startEditBlog = (id, { title, body }) => {
-  return (dispatch, getState) => {
-    return dispatch(editBlog(id, { title, body }));
-  };
-};
+export const startEditBlog = (id, { title, body }) => dispatch =>
+  db
+    .collection(`/blogs`)
+    .doc(id)
+    .update({ title, body })
+    .then(() => dispatch(editBlog(id, { title, body })));
 
 const deleteBlog = id => ({ type: 'DELETE_BLOG', id });
 
-export const startDeleteBlog = id => {
-  return (dispatch, getState) => {
-    return dispatch(deleteBlog(id));
-  };
-};
+export const startDeleteBlog = id => dispatch =>
+  db
+    .collection(`/blogs`)
+    .doc(id)
+    .delete()
+    .then(() => dispatch(deleteBlog(id)));
 
 const setBlogs = blogs => ({ type: 'SET_BLOGS', blogs });
 

@@ -6,7 +6,7 @@ import { startAddBlog } from '../actions/blogs';
 class AddBlogPage extends React.Component {
   onSubmitHandler = blog => {
     this.props.startAddBlog(blog);
-    this.props.history.push('/');
+    this.props.history.push('/myBlogs');
   };
   render() {
     return (
