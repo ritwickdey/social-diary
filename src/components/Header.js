@@ -12,15 +12,15 @@ const Header = props => {
       <NavLink style={navLinkstyle} to="/">
         Dashboard
       </NavLink>
-      <NavLink style={navLinkstyle} to="/create">
-        Add Blog
-      </NavLink>
       {!props.user ? (
         <NavLink style={navLinkstyle} to="/login">
           login
         </NavLink>
       ) : (
         <span>
+          <NavLink style={navLinkstyle} to="/create">
+            Add Blog
+          </NavLink>
           <NavLink style={navLinkstyle} to="/myBlogs">
             My Blogs
           </NavLink>
