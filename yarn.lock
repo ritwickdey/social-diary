@@ -3449,6 +3449,13 @@ interpret@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
+interweave@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/interweave/-/interweave-8.0.2.tgz#51001199c58d311f8b1d0100c4f6b9d494e97480"
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.6.0"
+
 invariant@^2.0.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"

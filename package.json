@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^4.10.0",
+    "interweave": "^8.0.2",
     "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dates": "^16.3.0",

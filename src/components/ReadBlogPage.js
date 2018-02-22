@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Interweave from 'interweave';
 import { connect } from 'react-redux';
 
 const ReadBlogPage = props => (
@@ -9,7 +10,7 @@ const ReadBlogPage = props => (
       {props.blog.uName} {' | '}
       {moment(props.blog.postedAt).format('DD MMM YYYY')}
     </div>
-    <p>{props.blog.body}</p>
+    <Interweave tagName="p" content={props.blog.body} />
   </div>
 );
 
