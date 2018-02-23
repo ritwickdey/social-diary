@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
 import NotFoundPage from '../components/NotFoundPage';
 import MyStoryPage from '../components/MyStoryPage';
 import DashboardPage from '../components/DashboardPage';
@@ -8,6 +9,8 @@ import EditStoryPage from '../components/EditStoryPage';
 import AddStoryPage from '../components/AddStoryPage';
 import Header from '../components/Header';
 import ReadStoryPage from '../components/ReadStoryPage';
+import PrivateRoute from './PrivateRoute';
+import AnonymousRoute from './AnonymousRoute';
 
 export const AppRouter = () => (
   <BrowserRouter>
@@ -16,13 +19,12 @@ export const AppRouter = () => (
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
         <Route path="/dashboard" component={DashboardPage} />
-        <Route path="/create" component={AddStoryPage} />
-        <Route path="/edit/:id" component={EditStoryPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/myStory" component={MyStoryPage} />
+        <AnonymousRoute path="/login" component={LoginPage} />
         <Route path="/read/:id" component={ReadStoryPage} />
+        <PrivateRoute path="/create" component={AddStoryPage} />
+        <PrivateRoute path="/edit/:id" component={EditStoryPage} />
+        <PrivateRoute path="/myStory" component={MyStoryPage} />
         <Route component={NotFoundPage} />
-        <Route />
       </Switch>
     </div>
   </BrowserRouter>
