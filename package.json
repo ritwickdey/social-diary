@@ -2,6 +2,7 @@
   "name": "social-diary",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ritwickdey.gitlab.io/social-diary/",
   "dependencies": {
     "firebase": "^4.10.0",
     "interweave": "^8.0.2",
