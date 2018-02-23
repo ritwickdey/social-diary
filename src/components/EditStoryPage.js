@@ -7,11 +7,11 @@ class EditStoryPage extends React.Component {
   onDeleteHandle = () => {
     if (!window.confirm('are you sure to delete?')) return;
     this.props.startDeleteStory(this.props.blog.id);
-    this.props.history.push('/myBlogs');
+    this.props.history.push('/myStory');
   };
   onSubmitHandle = blog => {
     this.props.startEditStory(this.props.blog.id, blog);
-    this.props.history.push('/myBlogs');
+    this.props.history.push('/myStory');
   };
   render() {
     return (

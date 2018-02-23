@@ -6,7 +6,7 @@ import { startAddStory } from '../actions/stories';
 class AddStoryPage extends React.Component {
   onSubmitHandler = blog => {
     this.props.startAddStory(blog);
-    this.props.history.push('/myBlogs');
+    this.props.history.push('/myStory');
   };
   render() {
     return (

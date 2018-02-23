@@ -22,7 +22,7 @@ const Header = props => {
           <NavLink style={navLinkstyle} to="/create">
             Add Story
           </NavLink>
-          <NavLink style={navLinkstyle} to="/myBlogs">
+          <NavLink style={navLinkstyle} to="/myStory">
             My Story
           </NavLink>
           <button onClick={() => props.startLogout()}>logout</button>

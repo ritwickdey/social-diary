@@ -19,7 +19,7 @@ export const AppRouter = () => (
         <Route path="/create" component={AddStoryPage} />
         <Route path="/edit/:id" component={EditStoryPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/myBlogs" component={MyStoryPage} />
+        <Route path="/myStory" component={MyStoryPage} />
         <Route path="/read/:id" component={ReadStoryPage} />
         <Route component={NotFoundPage} />
         <Route />
