@@ -6,17 +6,14 @@ import { startEditStory, startDeleteStory } from '../actions/stories';
 class EditStoryPage extends React.Component {
   onDeleteHandle = () => {
     if (!window.confirm('are you sure to delete?')) return;
-    const history = this.props.history;
-    this.props.startDeleteStory(this.props.story.id).then(e => {
-      const storyId = e.story ? e.story.id : null;
-      history.push(storyId ? `/read/${storyId}` : '/myStory');
-    });
+    this.props
+      .startDeleteStory(this.props.story.id)
+      .then(() => this.props.history.push('/myStory'));
   };
   onSubmitHandle = story => {
-    const history = this.props.history;
     this.props
       .startEditStory(this.props.story.id, story)
-      .then(() => this.props.history.push('/myStory'));
+      .then(e => this.props.history.push(e.id ? `/read/${e.id}` : '/myStory'));
   };
   render() {
     return (
