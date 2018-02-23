@@ -9,6 +9,7 @@ import firebase from './firebase/firestore';
 import { store } from './store/configureStore';
 import { startSetStory } from './actions/stories';
 import { loginUser, logoutUser } from './actions/user';
+import LoadingPage from './components/loadingPage';
 
 class App extends Component {
   appStore = store();
@@ -29,7 +30,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={this.appStore}>
-        {this.state.isLoaded ? <AppRouter /> : <p>Loading...</p>}
+        <div>
+          <LoadingPage />
+          {this.state.isLoaded ? <AppRouter /> : <p>Loading...</p>}
+        </div>
       </Provider>
     );
   }
