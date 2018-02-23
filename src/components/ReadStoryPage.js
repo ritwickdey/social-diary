@@ -1,16 +1,11 @@
 import React from 'react';
-import moment from 'moment';
-import Interweave from 'interweave';
 import { connect } from 'react-redux';
+
+import StoryView from './StoryView';
 
 const ReadStoryPage = props => (
   <div>
-    <h2>{props.story.title}</h2>
-    <div>
-      {props.story.uName} {' | '}
-      {moment(props.story.postedAt).format('DD MMM YYYY')}
-    </div>
-    <Interweave tagName="p" content={props.story.body} />
+    <StoryView story={props.story} />
   </div>
 );
 

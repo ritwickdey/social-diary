@@ -35,28 +35,35 @@ export class StoryForm extends React.Component {
   render() {
     return (
       <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmitHandler}>
-          <div>
-            <input
-              onChange={this.onTitleChange}
-              value={this.state.title}
-              type="text"
-              name="title"
-              placeholder="Story Title"
-            />
-          </div>
-          <div>
-            <textarea
-              onChange={this.onBodyChange}
-              value={this.state.body}
-              type="text"
-              name="body"
-              placeholder="What's happening?"
-            />
-          </div>
-          <button type="submit">{this.props.submitBtnTitle || 'Create'}</button>
-        </form>
+        <div>
+          {this.state.error && <p>{this.state.error}</p>}
+          <form onSubmit={this.onSubmitHandler}>
+            <div>
+              <input
+                onChange={this.onTitleChange}
+                value={this.state.title}
+                type="text"
+                name="title"
+                placeholder="Story Title"
+              />
+            </div>
+            <div>
+              <textarea
+                onChange={this.onBodyChange}
+                value={this.state.body}
+                type="text"
+                name="body"
+                placeholder="What's happening?"
+              />
+            </div>
+            <button type="submit">
+              {this.props.submitBtnTitle || 'Create'}
+            </button>
+          </form>
+        </div>
+        <div>
+          
+        </div>
       </div>
     );
   }
