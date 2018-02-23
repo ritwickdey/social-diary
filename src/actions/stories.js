@@ -1,6 +1,6 @@
 import { db } from '../firebase/firestore';
 
-const ROOT_DB = '/blogs';
+const ROOT_DB = '/stories';
 
 const addStory = ({
   id = Date.now(),

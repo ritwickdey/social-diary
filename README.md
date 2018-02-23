@@ -1,5 +1,5 @@
-# Social Blogs 
-A simple Blog App
+# Social Diary 
+A simple story app where people can share their story 
 
 
 
