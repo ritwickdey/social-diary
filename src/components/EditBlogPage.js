@@ -16,13 +16,13 @@ class EditBlogPage extends React.Component {
   render() {
     return (
       <div>
-        <h4>Edit Blog</h4>
+        <h4>Edit Story</h4>
         <BlogForm
           blog={this.props.blog}
           submitBtnTitle="Edit Blog"
           onSubmit={this.onSubmitHandle}
         />
-        <button onClick={this.onDeleteHandle}>Delete Blog</button>
+        <button onClick={this.onDeleteHandle}>Delete Story</button>
       </div>
     );
   }

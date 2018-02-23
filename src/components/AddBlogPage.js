@@ -11,9 +11,9 @@ class AddBlogPage extends React.Component {
   render() {
     return (
       <div>
-        <h3>Add Blog</h3>
+        <h3>Add Story</h3>
         <BlogForm
-          submitBtnTitle="Create Blog"
+          submitBtnTitle="Create Story"
           onSubmit={this.onSubmitHandler}
         />
       </div>

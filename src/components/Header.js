@@ -8,7 +8,8 @@ const Header = props => {
   const navLinkstyle = { paddingRight: '10px' };
   return (
     <div style={{ marginBottom: '10px' }}>
-      <h1>Social Blogs</h1>
+      <h1>Social Diary</h1>
+      <p>Share your story with others</p>
       <NavLink style={navLinkstyle} to="/">
         Dashboard
       </NavLink>
@@ -19,10 +20,10 @@ const Header = props => {
       ) : (
         <span>
           <NavLink style={navLinkstyle} to="/create">
-            Add Blog
+            Add Story
           </NavLink>
           <NavLink style={navLinkstyle} to="/myBlogs">
-            My Blogs
+            My Story
           </NavLink>
           <button onClick={() => props.startLogout()}>logout</button>
         </span>

@@ -43,7 +43,7 @@ export class BlogForm extends React.Component {
               value={this.state.title}
               type="text"
               name="title"
-              placeholder="Blog Title"
+              placeholder="Story Title"
             />
           </div>
           <div>
@@ -52,7 +52,7 @@ export class BlogForm extends React.Component {
               value={this.state.body}
               type="text"
               name="body"
-              placeholder="What is happening?"
+              placeholder="What's happening?"
             />
           </div>
           <button type="submit">{this.props.submitBtnTitle || 'Create'}</button>

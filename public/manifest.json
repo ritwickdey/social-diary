@@ -1,6 +1,6 @@
 {
-  "short_name": "Social Blogs",
-  "name": "Create React App Sample",
+  "short_name": "Social Diary",
+  "name": "Share your story with others",
   "icons": [
     {
       "src": "favicon.ico",
