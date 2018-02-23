@@ -7,6 +7,7 @@ import FilterPage from './filterPage';
 
 const DashboardPage = props => (
   <div>
+     <h4>Timeline</h4>
     <FilterPage />
     <StoryList stories={props.stories} />
   </div>

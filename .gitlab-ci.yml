@@ -1,0 +1,20 @@
+image: node:8.6.0 
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - yarn install
+
+pages:
+  stage: deploy
+  script:
+    - yarn build
+    - rm -rf public
+    - mv build/ public/
+  artifacts:
+    paths:
+      - public 
+  only:
+    - master 

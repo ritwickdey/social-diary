@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, HashRouter, Route, Redirect } from 'react-router-dom';
 
 import NotFoundPage from '../components/NotFoundPage';
 import MyStoryPage from '../components/MyStoryPage';
@@ -13,7 +13,7 @@ import PrivateRoute from './PrivateRoute';
 import AnonymousRoute from './AnonymousRoute';
 
 export const AppRouter = () => (
-  <BrowserRouter>
+  <HashRouter hashType="hashbang">
     <div>
       <Header />
       <Switch>
@@ -27,5 +27,5 @@ export const AppRouter = () => (
         <Route component={NotFoundPage} />
       </Switch>
     </div>
-  </BrowserRouter>
+  </HashRouter>
 );
