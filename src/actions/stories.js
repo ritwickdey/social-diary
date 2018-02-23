@@ -14,20 +14,18 @@ const addStory = ({
   story: { id, title, body, postedAt, uId, uName }
 });
 
-export const startAddStory = story => {
-  return (dispatch, getState) => {
-    const { user: { uid, name } } = getState();
-    story.uId = uid;
-    story.uName = name;
-    story.postedAt = Date.now();
-    db
-      .collection(ROOT_DB)
-      .add(story)
-      .then(result => {
-        story.id = result.id;
-        return dispatch(addStory(story));
-      });
-  };
+export const startAddStory = story => (dispatch, getState) => {
+  const { user: { uid, name } } = getState();
+  story.uId = uid;
+  story.uName = name;
+  story.postedAt = Date.now();
+  return db
+    .collection(ROOT_DB)
+    .add(story)
+    .then(result => {
+      story.id = result.id;
+      return dispatch(addStory(story));
+    });
 };
 
 const editStory = (id, { title, body }) => ({

@@ -5,8 +5,11 @@ import { startAddStory } from '../actions/stories';
 
 class AddStoryPage extends React.Component {
   onSubmitHandler = story => {
-    this.props.startAddStory(story);
-    this.props.history.push('/myStory');
+    const history = this.props.history;
+    this.props.startAddStory(story).then(e => {
+      const storyId = e.story ? e.story.id : null;
+      history.push(storyId ? `/read/${storyId}` : '/myStory');
+    });
   };
   render() {
     return (
