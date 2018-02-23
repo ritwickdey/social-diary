@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NotFoundPage from '../components/NotFoundPage';
-import MyBlogPage from '../components/MyBlogPage';
+import MyStoryPage from '../components/MyStoryPage';
 import DashboardPage from '../components/DashboardPage';
 import LoginPage from '../components/LoginPage';
-import EditBlogPage from '../components/EditBlogPage';
-import AddBlogPage from '../components/AddBlogPage';
+import EditStoryPage from '../components/EditStoryPage';
+import AddStoryPage from '../components/AddStoryPage';
 import Header from '../components/Header';
-import ReadBlogPage from '../components/ReadBlogPage';
+import ReadStoryPage from '../components/ReadStoryPage';
 
 export const AppRouter = () => (
   <BrowserRouter>
@@ -16,11 +16,11 @@ export const AppRouter = () => (
       <Switch>
         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
         <Route path="/dashboard" component={DashboardPage} />
-        <Route path="/create" component={AddBlogPage} />
-        <Route path="/edit/:id" component={EditBlogPage} />
+        <Route path="/create" component={AddStoryPage} />
+        <Route path="/edit/:id" component={EditStoryPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/myBlogs" component={MyBlogPage} />
-        <Route path="/read/:id" component={ReadBlogPage} />
+        <Route path="/myBlogs" component={MyStoryPage} />
+        <Route path="/read/:id" component={ReadStoryPage} />
         <Route component={NotFoundPage} />
         <Route />
       </Switch>
