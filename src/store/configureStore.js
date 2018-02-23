@@ -1,9 +1,11 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import { storyReducers } from '../reducers/stories';
 import { filterReducers } from '../reducers/filters';
 import { userReducers } from '../reducers/user';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = () =>
   createStore(
@@ -12,5 +14,5 @@ export const store = () =>
       filters: filterReducers,
       user: userReducers
     }),
-    applyMiddleware(thunk)
+    composeEnhancers(applyMiddleware(thunk))
   );
