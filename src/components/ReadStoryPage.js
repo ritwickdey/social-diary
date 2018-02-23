@@ -5,18 +5,18 @@ import { connect } from 'react-redux';
 
 const ReadStoryPage = props => (
   <div>
-    <h2>{props.blog.title}</h2>
+    <h2>{props.story.title}</h2>
     <div>
-      {props.blog.uName} {' | '}
-      {moment(props.blog.postedAt).format('DD MMM YYYY')}
+      {props.story.uName} {' | '}
+      {moment(props.story.postedAt).format('DD MMM YYYY')}
     </div>
-    <Interweave tagName="p" content={props.blog.body} />
+    <Interweave tagName="p" content={props.story.body} />
   </div>
 );
 
 const mapStateToProp = (state, props) => {
-  const blog = state.blogs.find(e => e.id === props.match.params.id);
-  return { blog };
+  const story = state.stories.find(e => e.id === props.match.params.id);
+  return { story };
 };
 
 export default connect(mapStateToProp)(ReadStoryPage);

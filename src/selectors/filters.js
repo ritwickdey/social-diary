@@ -1,30 +1,30 @@
 import moment from 'moment';
 
-export const filterStories = (blogs = [], filters = {}) => {
-  return blogs
-    .filter(blog => {
+export const filterStories = (stories = [], filters = {}) => {
+  return stories
+    .filter(story => {
       const isStartDateMatched = !filters.startDate
         ? true
-        : moment(blog.postedAt).isSameOrAfter(moment(filters.startDate));
+        : moment(story.postedAt).isSameOrAfter(moment(filters.startDate));
 
       const isEndDateMatched = !filters.endDate
         ? true
-        : moment(blog.postedAt).isSameOrBefore(moment(filters.endDate));
+        : moment(story.postedAt).isSameOrBefore(moment(filters.endDate));
 
       const isTextMatched = !filters.filterText
         ? true
-        : blog.title.toLowerCase().includes(filters.filterText.toLowerCase());
+        : story.title.toLowerCase().includes(filters.filterText.toLowerCase());
 
       return isStartDateMatched && isEndDateMatched && isTextMatched;
     })
-    .sort((blog1, blog2) => {
+    .sort((story1, story2) => {
       const orderBy = filters.orderBy === 'asc' ? 1 : -1;
       if (filters.sortBy === 'title') {
-        return blog1.title.toLowerCase() > blog2.title.toLowerCase()
+        return story1.title.toLowerCase() > story2.title.toLowerCase()
           ? orderBy
           : -orderBy;
       } else {
-        return moment(blog1.postedAt).isAfter(moment(blog2.postedAt))
+        return moment(story1.postedAt).isAfter(moment(story2.postedAt))
           ? orderBy
           : -orderBy;
       }

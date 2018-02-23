@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-const defaultFilterBlogState = () => ({
+const defaultFilterState = () => ({
   filterText: '',
   startDate: moment().startOf('month'),
   endDate: moment().endOf('month'),
@@ -8,8 +8,8 @@ const defaultFilterBlogState = () => ({
   sortBy: 'date'
 });
 
-export const filterBlogReducers = (
-  state = defaultFilterBlogState(),
+export const filterReducers = (
+  state = defaultFilterState(),
   action
 ) => {
   switch (action.type) {
