@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 import StoryList from './StoryList';
 import FilterPage from './filterPage';
-import { filterBlogs } from '../selectors/filters';
-import { getMyBlogs } from '../selectors/blogs';
+import { filterStories } from '../selectors/filters';
+import { getMyStories } from '../selectors/stories';
 
-const MyBlogPage = props => (
+const MyStoryPage = props => (
   <div>
     <h4>My Story</h4>
     <FilterPage />
@@ -15,7 +15,7 @@ const MyBlogPage = props => (
 );
 
 const mapStateToProp = state => ({
-  blogs: filterBlogs(getMyBlogs(state.blogs, state.user.uid), state.filters)
+  blogs: filterStories(getMyStories(state.blogs, state.user.uid), state.filters)
 });
 
-export default connect(mapStateToProp)(MyBlogPage);
+export default connect(mapStateToProp)(MyStoryPage);

@@ -3,7 +3,7 @@ import { StoryForm } from './StoryForm';
 import { connect } from 'react-redux';
 import { startEditStory, startDeleteStory } from '../actions/stories';
 
-class EditBlogPage extends React.Component {
+class EditStoryPage extends React.Component {
   onDeleteHandle = () => {
     if (!window.confirm('are you sure to delete?')) return;
     this.props.startDeleteStory(this.props.blog.id);
@@ -38,4 +38,4 @@ const mapDispatchToProp = dispatch => ({
   startDeleteStory: id => dispatch(startDeleteStory(id))
 });
 
-export default connect(mapStateToProp, mapDispatchToProp)(EditBlogPage);
+export default connect(mapStateToProp, mapDispatchToProp)(EditStoryPage);

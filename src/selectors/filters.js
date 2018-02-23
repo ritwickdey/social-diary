@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const filterBlogs = (blogs = [], filters = {}) => {
+export const filterStories = (blogs = [], filters = {}) => {
   return blogs
     .filter(blog => {
       const isStartDateMatched = !filters.startDate

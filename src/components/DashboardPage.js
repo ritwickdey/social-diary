@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filterBlogs } from '../selectors/filters';
+import { filterStories } from '../selectors/filters';
 
 import StoryList from './StoryList';
 import FilterPage from './filterPage';
@@ -13,7 +13,7 @@ const DashboardPage = props => (
 );
 
 const mapStateToProp = state => ({
-  blogs: filterBlogs(state.blogs, state.filters)
+  blogs: filterStories(state.blogs, state.filters)
 });
 
 export default connect(mapStateToProp)(DashboardPage);

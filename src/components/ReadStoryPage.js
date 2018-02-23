@@ -3,7 +3,7 @@ import moment from 'moment';
 import Interweave from 'interweave';
 import { connect } from 'react-redux';
 
-const ReadBlogPage = props => (
+const ReadStoryPage = props => (
   <div>
     <h2>{props.blog.title}</h2>
     <div>
@@ -19,4 +19,4 @@ const mapStateToProp = (state, props) => {
   return { blog };
 };
 
-export default connect(mapStateToProp)(ReadBlogPage);
+export default connect(mapStateToProp)(ReadStoryPage);
