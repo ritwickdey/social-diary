@@ -19,6 +19,7 @@ export const startAddStory = story => {
     const { user: { uid, name } } = getState();
     story.uId = uid;
     story.uName = name;
+    story.postedAt = Date.now();
     db
       .collection(ROOT_DB)
       .add(story)
