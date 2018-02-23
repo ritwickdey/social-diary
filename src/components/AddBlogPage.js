@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { BlogForm } from './BlogForm';
-import { startAddStory } from '../actions/blogs';
+import { startAddStory } from '../actions/stories';
 
 class AddBlogPage extends React.Component {
   onSubmitHandler = blog => {

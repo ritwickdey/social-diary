@@ -7,7 +7,7 @@ import './App.css';
 import { AppRouter } from './routes/AppRouter';
 import firebase from './firebase/firestore';
 import { store } from './store/configureStore';
-import { startSetStory } from './actions/blogs';
+import { startSetStory } from './actions/stories';
 import { loginUser, logoutUser } from './actions/user';
 
 class App extends Component {

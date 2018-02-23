@@ -1,7 +1,7 @@
 import React from 'react';
 import { BlogForm } from './BlogForm';
 import { connect } from 'react-redux';
-import { startEditStory, startDeleteStory } from '../actions/blogs';
+import { startEditStory, startDeleteStory } from '../actions/stories';
 
 class EditBlogPage extends React.Component {
   onDeleteHandle = () => {
