@@ -6,7 +6,9 @@ const AnonymousRoute = ({ isAuthenticated, component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={props => (!isAuthenticated ? <Component /> : <Redirect to="/" />)}
+      render={props =>
+        !isAuthenticated ? <Component {...props} /> : <Redirect to="/" />
+      }
     />
   );
 };
