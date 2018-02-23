@@ -8,7 +8,7 @@ import { userReducers } from '../reducers/user';
 export const store = () =>
   createStore(
     combineReducers({
-      blogs: storyReducers,
+      stories: storyReducers,
       filters: filterBlogReducers,
       user: userReducers
     }),

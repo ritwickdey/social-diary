@@ -1,7 +1,7 @@
 export const storyReducers = (state = [], action) => {
   switch (action.type) {
     case 'ADD_STORY':
-      return [...state, action.blog];
+      return [...state, action.story];
     case 'DELETE_STORY':
       return state.filter(e => e.id !== action.id);
     case 'EDIT_STORY':
@@ -10,7 +10,7 @@ export const storyReducers = (state = [], action) => {
           e.id !== action.id ? e : { ...e, ...action.updates, id: action.id }
       );
     case 'SET_STORY':
-      return [...action.blogs];
+      return [...action.stories];
 
     default:
       return [...state];

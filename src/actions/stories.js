@@ -9,20 +9,20 @@ const addStory = ({
   uName = ''
 } = {}) => ({
   type: 'ADD_STORY',
-  blog: { id, title, body, postedAt, uId, uName }
+  story: { id, title, body, postedAt, uId, uName }
 });
 
-export const startAddStory = blog => {
+export const startAddStory = story => {
   return (dispatch, getState) => {
     const { user: { uid, name } } = getState();
-    blog.uId = uid;
-    blog.uName = name;
+    story.uId = uid;
+    story.uName = name;
     db
       .collection('/blogs')
-      .add(blog)
+      .add(story)
       .then(result => {
-        blog.id = result.id;
-        return dispatch(addStory(blog));
+        story.id = result.id;
+        return dispatch(addStory(story));
       });
   };
 };
@@ -49,7 +49,7 @@ export const startDeleteStory = id => dispatch =>
     .delete()
     .then(() => dispatch(deleteStory(id)));
 
-const setStory = blogs => ({ type: 'SET_STORY', blogs });
+const setStory = stories => ({ type: 'SET_STORY', stories });
 
 export const startSetStory = () => {
   return dispatch =>
@@ -57,8 +57,8 @@ export const startSetStory = () => {
       .collection('/blogs')
       .get()
       .then(results => {
-        const blogs = [];
-        results.forEach(e => blogs.push({ ...e.data(), id: e.id }));
-        return dispatch(setStory(blogs));
+        const story = [];
+        results.forEach(e => story.push({ ...e.data(), id: e.id }));
+        return dispatch(setStory(story));
       });
 };
