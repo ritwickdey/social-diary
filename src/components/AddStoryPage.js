@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BlogForm } from './BlogForm';
+import { StoryForm } from './StoryForm';
 import { startAddStory } from '../actions/stories';
 
 class AddBlogPage extends React.Component {
@@ -12,7 +12,7 @@ class AddBlogPage extends React.Component {
     return (
       <div>
         <h3>Add Story</h3>
-        <BlogForm
+        <StoryForm
           submitBtnTitle="Create Story"
           onSubmit={this.onSubmitHandler}
         />

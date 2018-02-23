@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogListItem } from './BlogListItem';
+import { StoryListItem } from './StoryListItem';
 
 const BlogList = props => {
   return (
@@ -8,7 +8,7 @@ const BlogList = props => {
         <p>No Blogs </p>
       ) : (
         props.blogs.map(blog => (
-          <BlogListItem {...props} key={blog.id} blog={blog} />
+          <StoryListItem {...props} key={blog.id} blog={blog} />
         ))
       )}
     </div>

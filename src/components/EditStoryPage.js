@@ -1,5 +1,5 @@
 import React from 'react';
-import { BlogForm } from './BlogForm';
+import { StoryForm } from './StoryForm';
 import { connect } from 'react-redux';
 import { startEditStory, startDeleteStory } from '../actions/stories';
 
@@ -17,7 +17,7 @@ class EditBlogPage extends React.Component {
     return (
       <div>
         <h4>Edit Story</h4>
-        <BlogForm
+        <StoryForm
           blog={this.props.blog}
           submitBtnTitle="Edit Blog"
           onSubmit={this.onSubmitHandle}

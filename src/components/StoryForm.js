@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class BlogForm extends React.Component {
+export class StoryForm extends React.Component {
   defaultState = () => ({ title: '', body: '', error: undefined });
 
   state = {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
-export const BlogListItem = props => (
+export const StoryListItem = props => (
   <div>
     <h4>
       <Link to={(props.nextUrl || '/read/') + props.blog.id}>

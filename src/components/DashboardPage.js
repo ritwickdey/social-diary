@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { filterBlogs } from '../selectors/filters';
 
-import BlogList from './BlogList';
+import StoryList from './StoryList';
 import FilterPage from './filterPage';
 
 const DashboardPage = props => (
   <div>
     <FilterPage />
-    <BlogList blogs={props.blogs} />
+    <StoryList blogs={props.blogs} />
   </div>
 );
 

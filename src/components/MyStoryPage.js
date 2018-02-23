@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import BlogList from './BlogList';
+import StoryList from './StoryList';
 import FilterPage from './filterPage';
 import { filterBlogs } from '../selectors/filters';
 import { getMyBlogs } from '../selectors/blogs';
@@ -10,7 +10,7 @@ const MyBlogPage = props => (
   <div>
     <h4>My Story</h4>
     <FilterPage />
-    <BlogList nextUrl="/edit/" blogs={props.blogs} />
+    <StoryList nextUrl="/edit/" blogs={props.blogs} />
   </div>
 );
 
