@@ -1,14 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import { blogReducers } from '../reducers/blogs';
+import { storyReducers } from '../reducers/stories';
 import { filterBlogReducers } from '../reducers/filters';
 import { userReducers } from '../reducers/user';
 
 export const store = () =>
   createStore(
     combineReducers({
-      blogs: blogReducers,
+      blogs: storyReducers,
       filters: filterBlogReducers,
       user: userReducers
     }),

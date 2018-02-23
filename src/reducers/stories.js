@@ -1,4 +1,4 @@
-export const blogReducers = (state = [], action) => {
+export const storyReducers = (state = [], action) => {
   switch (action.type) {
     case 'ADD_STORY':
       return [...state, action.blog];
