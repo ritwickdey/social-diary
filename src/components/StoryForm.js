@@ -1,28 +1,31 @@
 import React from 'react';
+import StoryView from './StoryView';
 
 export class StoryForm extends React.Component {
-  defaultState = () => ({ title: '', body: '', error: undefined });
+  defaultState = () => ({ story: { title: '', body: '' }, error: undefined });
 
   state = {
     ...this.defaultState(),
-    title: this.props.story ? this.props.story.title : '',
-    body: this.props.story ? this.props.story.body : ''
+    story: {
+      title: this.props.story ? this.props.story.title : '',
+      body: this.props.story ? this.props.story.body : ''
+    }
   };
 
   onTitleChange = e => {
     const title = e.target.value;
-    this.setState(() => ({ title }));
+    this.setState(prev => ({ story: { ...prev.story, title } }));
   };
 
   onBodyChange = e => {
     const body = e.target.value;
-    this.setState(() => ({ body }));
+    this.setState(prev => ({ story: { ...prev.story, body } }));
   };
 
   onSubmitHandler = e => {
     e.preventDefault();
-    const title = this.state.title.trim();
-    const body = this.state.body.trim();
+    const title = this.state.story.title.trim();
+    const body = this.state.story.body.trim();
     if (!title || !body) {
       return this.setState(() => ({
         error: 'Both title & body fields are requried'
@@ -41,7 +44,7 @@ export class StoryForm extends React.Component {
             <div>
               <input
                 onChange={this.onTitleChange}
-                value={this.state.title}
+                value={this.state.story.title}
                 type="text"
                 name="title"
                 placeholder="Story Title"
@@ -50,7 +53,7 @@ export class StoryForm extends React.Component {
             <div>
               <textarea
                 onChange={this.onBodyChange}
-                value={this.state.body}
+                value={this.state.story.body}
                 type="text"
                 name="body"
                 placeholder="What's happening?"
@@ -62,7 +65,7 @@ export class StoryForm extends React.Component {
           </form>
         </div>
         <div>
-          
+          <StoryView story={this.state.story} />
         </div>
       </div>
     );
