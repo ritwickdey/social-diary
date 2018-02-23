@@ -1,6 +1,6 @@
 import { db } from '../firebase/firestore';
 
-const addBlog = ({
+const addStory = ({
   id = Date.now(),
   title = '',
   postedAt = Date.now(),
@@ -8,11 +8,11 @@ const addBlog = ({
   uId = '',
   uName = ''
 } = {}) => ({
-  type: 'ADD_BLOG',
+  type: 'ADD_STORY',
   blog: { id, title, body, postedAt, uId, uName }
 });
 
-export const startAddBlog = blog => {
+export const startAddStory = blog => {
   return (dispatch, getState) => {
     const { user: { uid, name } } = getState();
     blog.uId = uid;
@@ -22,36 +22,36 @@ export const startAddBlog = blog => {
       .add(blog)
       .then(result => {
         blog.id = result.id;
-        return dispatch(addBlog(blog));
+        return dispatch(addStory(blog));
       });
   };
 };
 
-const editBlog = (id, { title, body }) => ({
-  type: 'EDIT_BLOG',
+const editStory = (id, { title, body }) => ({
+  type: 'EDIT_STORY',
   id,
   updates: { title, body }
 });
 
-export const startEditBlog = (id, { title, body }) => dispatch =>
+export const startEditStory = (id, { title, body }) => dispatch =>
   db
     .collection(`/blogs`)
     .doc(id)
     .update({ title, body })
-    .then(() => dispatch(editBlog(id, { title, body })));
+    .then(() => dispatch(editStory(id, { title, body })));
 
-const deleteBlog = id => ({ type: 'DELETE_BLOG', id });
+const deleteStory = id => ({ type: 'DELETE_STORY', id });
 
-export const startDeleteBlog = id => dispatch =>
+export const startDeleteStory = id => dispatch =>
   db
     .collection(`/blogs`)
     .doc(id)
     .delete()
-    .then(() => dispatch(deleteBlog(id)));
+    .then(() => dispatch(deleteStory(id)));
 
-const setBlogs = blogs => ({ type: 'SET_BLOGS', blogs });
+const setStory = blogs => ({ type: 'SET_STORY', blogs });
 
-export const startSetBlogs = () => {
+export const startSetStory = () => {
   return dispatch =>
     db
       .collection('/blogs')
@@ -59,6 +59,6 @@ export const startSetBlogs = () => {
       .then(results => {
         const blogs = [];
         results.forEach(e => blogs.push({ ...e.data(), id: e.id }));
-        return dispatch(setBlogs(blogs));
+        return dispatch(setStory(blogs));
       });
 };

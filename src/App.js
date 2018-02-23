@@ -7,7 +7,7 @@ import './App.css';
 import { AppRouter } from './routes/AppRouter';
 import firebase from './firebase/firestore';
 import { store } from './store/configureStore';
-import { startSetBlogs } from './actions/blogs';
+import { startSetStory } from './actions/blogs';
 import { loginUser, logoutUser } from './actions/user';
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
 
   componentDidMount() {
     this.appStore.subscribe(() => console.log(this.appStore.getState()));
-    this.appStore.dispatch(startSetBlogs()).then(() => {
+    this.appStore.dispatch(startSetStory()).then(() => {
       this.setState({ isLoaded: true });
     });
     firebase.auth().onAuthStateChanged(user => {

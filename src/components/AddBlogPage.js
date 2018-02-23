@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { BlogForm } from './BlogForm';
-import { startAddBlog } from '../actions/blogs';
+import { startAddStory } from '../actions/blogs';
 
 class AddBlogPage extends React.Component {
   onSubmitHandler = blog => {
-    this.props.startAddBlog(blog);
+    this.props.startAddStory(blog);
     this.props.history.push('/myBlogs');
   };
   render() {
@@ -22,6 +22,6 @@ class AddBlogPage extends React.Component {
 }
 
 const mapDispathToProps = dispatch => ({
-  startAddBlog: blog => dispatch(startAddBlog(blog))
+  startAddStory: blog => dispatch(startAddStory(blog))
 });
 export default connect(undefined, mapDispathToProps)(AddBlogPage);
