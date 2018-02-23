@@ -5,8 +5,8 @@ export class StoryForm extends React.Component {
 
   state = {
     ...this.defaultState(),
-    title: this.props.blog ? this.props.blog.title : '',
-    body: this.props.blog ? this.props.blog.body : ''
+    title: this.props.story ? this.props.story.title : '',
+    body: this.props.story ? this.props.story.body : ''
   };
 
   onTitleChange = e => {

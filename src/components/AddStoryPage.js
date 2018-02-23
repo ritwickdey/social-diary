@@ -4,8 +4,8 @@ import { StoryForm } from './StoryForm';
 import { startAddStory } from '../actions/stories';
 
 class AddStoryPage extends React.Component {
-  onSubmitHandler = blog => {
-    this.props.startAddStory(blog);
+  onSubmitHandler = story => {
+    this.props.startAddStory(story);
     this.props.history.push('/myStory');
   };
   render() {
@@ -22,6 +22,6 @@ class AddStoryPage extends React.Component {
 }
 
 const mapDispathToProps = dispatch => ({
-  startAddStory: blog => dispatch(startAddStory(blog))
+  startAddStory: story => dispatch(startAddStory(story))
 });
 export default connect(undefined, mapDispathToProps)(AddStoryPage);

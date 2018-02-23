@@ -4,11 +4,11 @@ import { StoryListItem } from './StoryListItem';
 const BlogList = props => {
   return (
     <div>
-      {props.blogs.length === 0 ? (
+      {props.stories.length === 0 ? (
         <p>No Blogs </p>
       ) : (
-        props.blogs.map(blog => (
-          <StoryListItem {...props} key={blog.id} blog={blog} />
+        props.stories.map(story => (
+          <StoryListItem {...props} key={story.id} blog={story} />
         ))
       )}
     </div>

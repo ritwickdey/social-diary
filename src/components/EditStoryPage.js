@@ -6,11 +6,11 @@ import { startEditStory, startDeleteStory } from '../actions/stories';
 class EditStoryPage extends React.Component {
   onDeleteHandle = () => {
     if (!window.confirm('are you sure to delete?')) return;
-    this.props.startDeleteStory(this.props.blog.id);
+    this.props.startDeleteStory(this.props.story.id);
     this.props.history.push('/myStory');
   };
-  onSubmitHandle = blog => {
-    this.props.startEditStory(this.props.blog.id, blog);
+  onSubmitHandle = story => {
+    this.props.startEditStory(this.props.story.id, story);
     this.props.history.push('/myStory');
   };
   render() {
@@ -18,8 +18,8 @@ class EditStoryPage extends React.Component {
       <div>
         <h4>Edit Story</h4>
         <StoryForm
-          blog={this.props.blog}
-          submitBtnTitle="Edit Blog"
+          story={this.props.story}
+          submitBtnTitle="Edit Story"
           onSubmit={this.onSubmitHandle}
         />
         <button onClick={this.onDeleteHandle}>Delete Story</button>
@@ -29,8 +29,8 @@ class EditStoryPage extends React.Component {
 }
 
 const mapStateToProp = (state, props) => {
-  const blog = state.blogs.find(e => e.id === props.match.params.id);
-  return { blog };
+  const story = state.stories.find(e => e.id === props.match.params.id);
+  return { story };
 };
 
 const mapDispatchToProp = dispatch => ({

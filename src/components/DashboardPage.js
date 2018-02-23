@@ -8,12 +8,12 @@ import FilterPage from './filterPage';
 const DashboardPage = props => (
   <div>
     <FilterPage />
-    <StoryList blogs={props.blogs} />
+    <StoryList stories={props.stories} />
   </div>
 );
 
 const mapStateToProp = state => ({
-  blogs: filterStories(state.blogs, state.filters)
+  stories: filterStories(state.stories, state.filters)
 });
 
 export default connect(mapStateToProp)(DashboardPage);

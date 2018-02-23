@@ -10,12 +10,12 @@ const MyStoryPage = props => (
   <div>
     <h4>My Story</h4>
     <FilterPage />
-    <StoryList nextUrl="/edit/" blogs={props.blogs} />
+    <StoryList nextUrl="/edit/" stories={props.stories} />
   </div>
 );
 
 const mapStateToProp = state => ({
-  blogs: filterStories(getMyStories(state.blogs, state.user.uid), state.filters)
+  stories: filterStories(getMyStories(state.stories, state.user.uid), state.filters)
 });
 
 export default connect(mapStateToProp)(MyStoryPage);
