@@ -8,6 +8,7 @@
     "interweave": "^8.0.2",
     "moment": "^2.20.1",
     "react": "^16.2.0",
+    "react-css-modules": "^4.7.1",
     "react-dates": "^16.3.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
