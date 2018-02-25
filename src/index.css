@@ -20,3 +20,17 @@ html {
   width: 70%;
   margin: 0 auto;
 }
+
+@media (max-width: 900px) {
+  .container {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}

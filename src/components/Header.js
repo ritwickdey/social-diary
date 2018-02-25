@@ -1,10 +1,10 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import { connect } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 
 import { startLogout } from '../actions/user';
 
-import CSSModules from 'react-css-modules';
 import style from '../styles/modules/header.module.css';
 
 const Header = props => {

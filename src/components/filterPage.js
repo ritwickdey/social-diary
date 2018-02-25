@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 
@@ -11,6 +12,8 @@ import {
   setSortByTitle,
   setStartDate
 } from '../actions/filters';
+
+import styles from '../styles/modules/filter.module.css';
 
 class FilterPage extends Component {
   state = {
@@ -42,14 +45,16 @@ class FilterPage extends Component {
 
   render() {
     return (
-      <div>
+      <div styleName="filterContainer" className="container">
         <input
+          styleName="inputBox"
           type="text"
           value={this.props.filters.filterText}
           onChange={this.onSearchTextChange}
           placeholder="search"
         />
         <select
+          styleName="inputBox"
           onChange={this.onSortByChanges}
           value={this.props.filters.sortBy}
           name="sortBy"
@@ -58,6 +63,7 @@ class FilterPage extends Component {
           <option value="title">Title</option>
         </select>
         <select
+          styleName="inputBox"
           onChange={this.onOrderByChange}
           value={this.props.filters.orderBy}
           name="orderBy"
@@ -77,6 +83,7 @@ class FilterPage extends Component {
           onFocusChange={this.onCalenderFocusChange}
           displayFormat="DD/MM/YYYY"
           showClearDates={true}
+          hideKeyboardShortcutsPanel={true}
         />
       </div>
     );
@@ -97,4 +104,6 @@ const mapDispatchToProp = dispatch => ({
   setSortByTitle: () => dispatch(setSortByTitle())
 });
 
-export default connect(mapStateToProp, mapDispatchToProp)(FilterPage);
+export default connect(mapStateToProp, mapDispatchToProp)(
+  CSSModules(FilterPage, styles)
+);
