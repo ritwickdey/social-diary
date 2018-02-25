@@ -8,8 +8,7 @@ import { getMyStories } from '../selectors/stories';
 
 const MyStoryPage = props => (
   <div>
-    <h4>My Story</h4>
-    <FilterPage />
+    <FilterPage  heading="My Story" />
     <StoryList nextUrl="/edit/" stories={props.stories} />
   </div>
 );

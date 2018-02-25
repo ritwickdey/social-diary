@@ -45,46 +45,49 @@ class FilterPage extends Component {
 
   render() {
     return (
-      <div styleName="filterContainer" className="container">
-        <input
-          styleName="inputBox"
-          type="text"
-          value={this.props.filters.filterText}
-          onChange={this.onSearchTextChange}
-          placeholder="search"
-        />
-        <select
-          styleName="inputBox"
-          onChange={this.onSortByChanges}
-          value={this.props.filters.sortBy}
-          name="sortBy"
-        >
-          <option value="date">Date</option>
-          <option value="title">Title</option>
-        </select>
-        <select
-          styleName="inputBox"
-          onChange={this.onOrderByChange}
-          value={this.props.filters.orderBy}
-          name="orderBy"
-        >
-          <option value="asc">A-Z</option>
-          <option value="desc">Z-A</option>
-        </select>
-        <DateRangePicker
-          startDate={this.props.filters.startDate}
-          startDateId="filterStartDateId"
-          endDate={this.props.filters.endDate}
-          endDateId="filterEndDateId"
-          onDatesChange={this.onDateChangeHandle}
-          isOutsideRange={() => false}
-          numberOfMonths={1}
-          focusedInput={this.state.calenderFocus}
-          onFocusChange={this.onCalenderFocusChange}
-          displayFormat="DD/MM/YYYY"
-          showClearDates={true}
-          hideKeyboardShortcutsPanel={true}
-        />
+      <div className="container">
+        {this.props.heading && <h4 styleName="filterHeading">{this.props.heading}</h4>}
+        <div styleName="filterContainer">
+          <input
+            styleName="inputBox"
+            type="text"
+            value={this.props.filters.filterText}
+            onChange={this.onSearchTextChange}
+            placeholder="search"
+          />
+          <select
+            styleName="inputBox"
+            onChange={this.onSortByChanges}
+            value={this.props.filters.sortBy}
+            name="sortBy"
+          >
+            <option value="date">Date</option>
+            <option value="title">Title</option>
+          </select>
+          <select
+            styleName="inputBox"
+            onChange={this.onOrderByChange}
+            value={this.props.filters.orderBy}
+            name="orderBy"
+          >
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+          </select>
+          <DateRangePicker
+            startDate={this.props.filters.startDate}
+            startDateId="filterStartDateId"
+            endDate={this.props.filters.endDate}
+            endDateId="filterEndDateId"
+            onDatesChange={this.onDateChangeHandle}
+            isOutsideRange={() => false}
+            numberOfMonths={1}
+            focusedInput={this.state.calenderFocus}
+            onFocusChange={this.onCalenderFocusChange}
+            displayFormat="DD/MM/YYYY"
+            showClearDates={true}
+            hideKeyboardShortcutsPanel={true}
+          />
+        </div>
       </div>
     );
   }
