@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 import { startLogout } from '../actions/user';
 
+import CSSModules from 'react-css-modules';
+import Styles from '../styles/modules/header.module.css';
+ console.log('style', Styles);
 const Header = props => {
   const navLinkstyle = { paddingRight: '10px' };
   return (
@@ -40,4 +43,7 @@ const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default CSSModules(
+  connect(mapStateToProps, mapDispatchToProps)(Header),
+  Styles
+);
