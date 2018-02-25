@@ -1,36 +1,55 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import { startLogout } from '../actions/user';
 
 import CSSModules from 'react-css-modules';
-import Styles from '../styles/modules/header.module.css';
- console.log('style', Styles);
+import style from '../styles/modules/header.module.css';
+
 const Header = props => {
-  const navLinkstyle = { paddingRight: '10px' };
+  console.log(props);
   return (
-    <div style={{ marginBottom: '10px' }}>
-      <h1>Social Diary</h1>
-      <p>Share your story with others</p>
-      <NavLink style={navLinkstyle} to="/">
-        Dashboard
-      </NavLink>
-      {!props.user ? (
-        <NavLink style={navLinkstyle} to="/login">
-          login
-        </NavLink>
-      ) : (
-        <span>
-          <NavLink style={navLinkstyle} to="/create">
-            Add Story
-          </NavLink>
-          <NavLink style={navLinkstyle} to="/myStory">
-            My Story
-          </NavLink>
-          <button onClick={() => props.startLogout()}>logout</button>
-        </span>
-      )}
+    <div styleName="navHeader">
+      <div styleName="navHeaderContainer" className="container">
+        <div styleName="brand">
+          <Link styleName="headLine" to="/">
+            Social Diary
+          </Link>
+          <p styleName="subHeader">Share your story with others</p>
+        </div>
+        <div styleName="navLinks">
+          {!props.user ? (
+            <NavLink
+              styleName="navLink"
+              to="/login"
+              activeClassName={style.navLinkActive}
+            >
+              login
+            </NavLink>
+          ) : (
+            <span>
+              <NavLink
+                styleName="navLink"
+                to="/create"
+                activeClassName={style.navLinkActive}
+              >
+                Add Story
+              </NavLink>
+              <NavLink
+                styleName="navLink"
+                to="/myStory"
+                activeClassName={style.navLinkActive}
+              >
+                My Story
+              </NavLink>
+              <button styleName="navLink" onClick={() => props.startLogout()}>
+                logout
+              </button>
+            </span>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
@@ -43,7 +62,10 @@ const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default CSSModules(
-  connect(mapStateToProps, mapDispatchToProps)(Header),
-  Styles
+export default connect(mapStateToProps, mapDispatchToProps, undefined, {
+  pure: false
+})(
+  CSSModules(Header, style, {
+    allowMultiple: true
+  })
 );
