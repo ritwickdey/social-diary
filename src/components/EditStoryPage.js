@@ -1,6 +1,7 @@
 import React from 'react';
-import { StoryForm } from './StoryForm';
 import { connect } from 'react-redux';
+
+import StoryForm from './StoryForm';
 import { startEditStory, startDeleteStory } from '../actions/stories';
 
 class EditStoryPage extends React.Component {

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StoryView from './StoryView';
+import CSSModules from 'react-css-modules';
 
-export class StoryForm extends React.Component {
+import styles from '../styles/modules/storyForm.module.css';
+
+class StoryForm extends Component {
   defaultState = () => ({ story: { title: '', body: '' }, error: undefined });
 
   state = {
@@ -37,23 +40,25 @@ export class StoryForm extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        {this.props.title && <h4>{this.props.title}</h4>}
+      <div styleName="container" className="container">
+        {this.props.title && <h4 styleName="heading">{this.props.title}</h4>}
         <div>
           <div>
             {this.state.error && <p>{this.state.error}</p>}
             <form onSubmit={this.onSubmitHandler}>
               <div>
                 <input
+                  styleName="inputBox"
                   onChange={this.onTitleChange}
                   value={this.state.story.title}
                   type="text"
                   name="title"
-                  placeholder="Story Title"
+                  placeholder="Title"
                 />
               </div>
               <div>
                 <textarea
+                  styleName="inputArea"
                   onChange={this.onBodyChange}
                   value={this.state.story.body}
                   type="text"
@@ -61,7 +66,7 @@ export class StoryForm extends React.Component {
                   placeholder="What's happening?"
                 />
               </div>
-              <button type="submit">
+              <button styleName="btn" type="submit">
                 {this.props.submitBtnTitle || 'Create'}
               </button>
             </form>
@@ -74,3 +79,5 @@ export class StoryForm extends React.Component {
     );
   }
 }
+
+export default CSSModules(StoryForm, styles);

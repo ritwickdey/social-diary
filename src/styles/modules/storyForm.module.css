@@ -1,0 +1,35 @@
+.container {
+  margin-top: 2.5rem;
+}
+
+.heading {
+  font-size: 3.2rem;
+  color: var(--black);
+  margin: 1rem 0;
+}
+
+.inputBox {
+  composes: inputBox from './filter.module.css';
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.inputArea {
+  composes: inputBox;
+  max-width: 100%;
+  min-height: 15rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1.6rem;
+  text-decoration: none;
+  border: none;
+  height: 100%;
+  text-align: center;
+  background-color: var(--color2);
+}
