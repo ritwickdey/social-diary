@@ -13,8 +13,8 @@ class AddStoryPage extends React.Component {
   render() {
     return (
       <div>
-        <h3>Add Story</h3>
         <StoryForm
+          title="Add Story"
           submitBtnTitle="Create Story"
           onSubmit={this.onSubmitHandler}
         />
