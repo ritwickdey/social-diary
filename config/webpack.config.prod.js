@@ -166,7 +166,7 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.css$/,
+            test: /\.module\.css$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -182,6 +182,7 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
+                        modules: true,
                         sourceMap: shouldUseSourceMap,
                       },
                     },
@@ -213,7 +214,7 @@ module.exports = {
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
           {
-            test: /\.module\.css$/,
+            test: /\.css$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -229,7 +230,6 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
-                        modules: true,
                         sourceMap: shouldUseSourceMap,
                       },
                     },

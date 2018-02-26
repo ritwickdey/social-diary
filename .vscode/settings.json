@@ -3,5 +3,6 @@
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "liveServer.settings.root": "/build"
 }
