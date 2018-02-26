@@ -6,13 +6,13 @@ const styles = {
   headLine: {
     fontSize: '2.6rem',
     padding: '1rem 0',
-    wordBreak: 'break-all'
+    wordBreak: 'keep-all'
   },
   subHeadline: {
     fontSize: '1.6rem',
     paddingBottom: '1rem',
     fontStyle: 'italic',
-    wordBreak: 'break-all'
+    wordBreak: 'keep-all'
   },
   content: {
     marginTop: '1.5rem'
