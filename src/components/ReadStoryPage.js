@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import StoryView from './StoryView';
 
 const ReadStoryPage = props => (
-  <div>
+  <div className="container">
     <StoryView story={props.story} />
   </div>
 );

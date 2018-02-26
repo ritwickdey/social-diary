@@ -6,11 +6,11 @@
   box-sizing: border-box;
 }
 :root {
-  --color1: #E12D53;
-  --color2: #17468A;
-  --color3: #4C8DCA;
-  --color4: #78E5EB;
-  --black: #4B4B4C;
+  --color1: #e12d53;
+  --color2: #17468a;
+  --color3: #4c8dca;
+  --color4: #78e5eb;
+  --black: #4b4b4c;
 }
 html {
   font-size: 62.5%;
@@ -21,6 +21,11 @@ html {
 .container {
   width: 70%;
   margin: 0 auto;
+}
+
+.interweave {
+  font-size: 1.6rem;
+  word-break: break-all;
 }
 
 @media (max-width: 900px) {
