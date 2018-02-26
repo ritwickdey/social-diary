@@ -5,7 +5,9 @@ import StoryView from './StoryView';
 
 const ReadStoryPage = props => (
   <div className="container">
-    <StoryView story={props.story} />
+    <div style={{padding:'2rem 0'}}>
+      <StoryView story={props.story} />
+    </div>
   </div>
 );
 
