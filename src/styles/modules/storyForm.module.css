@@ -15,6 +15,25 @@
   margin-bottom: 0.8rem;
 }
 
+.story {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.storyForm {
+  width: 45%;
+  margin-right: 1rem;
+}
+
+.storyPreview {
+  background-color: #f8f8f8;
+  padding: 1.5rem;
+  width: 45%;
+}
+
 .inputArea {
   composes: inputBox;
   max-width: 100%;
@@ -32,4 +51,15 @@
   height: 100%;
   text-align: center;
   background-color: var(--color2);
+}
+
+@media (max-width: 800px) {
+  .storyForm,
+  .storyPreview {
+    width: 100%;
+  }
+
+  .storyPreview {
+    margin-top: 1.5rem;
+  }
 }

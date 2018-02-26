@@ -42,8 +42,8 @@ class StoryForm extends Component {
     return (
       <div styleName="container" className="container">
         {this.props.title && <h4 styleName="heading">{this.props.title}</h4>}
-        <div>
-          <div>
+        <div styleName="story">
+          <div styleName="storyForm">
             {this.state.error && <p>{this.state.error}</p>}
             <form onSubmit={this.onSubmitHandler}>
               <div>
@@ -71,9 +71,12 @@ class StoryForm extends Component {
               </button>
             </form>
           </div>
-          <div>
-            <StoryView story={this.state.story} />
-          </div>
+          {this.state.story &&
+            (this.state.story.title || this.state.story.body) && (
+              <div styleName="storyPreview">
+                <StoryView story={this.state.story} />
+              </div>
+            )}
         </div>
       </div>
     );

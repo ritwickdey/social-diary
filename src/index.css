@@ -15,6 +15,7 @@
 html {
   font-size: 62.5%;
   font-family: Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
