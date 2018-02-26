@@ -11,10 +11,11 @@
 
 .inputBox {
   font-size: 1.8rem;
-  padding: 13px 12px 11px;
+  padding: 14px 11px;
   line-height: 24px;
   margin-right: 0.5rem;
   color: #565a5c;
+  height: 100%;
   border: 1px solid #cacccd;
 }
 
@@ -24,5 +25,6 @@
   }
   .inputBox {
     width: 100%;
+    margin-right: 0;
   }
 }

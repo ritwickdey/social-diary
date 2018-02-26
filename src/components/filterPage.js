@@ -53,7 +53,7 @@ class FilterPage extends Component {
             type="text"
             value={this.props.filters.filterText}
             onChange={this.onSearchTextChange}
-            placeholder="search"
+            placeholder="Search"
           />
           <select
             styleName="inputBox"
