@@ -48,3 +48,9 @@ html {
     display: none !important;
   }
 }
+
+@media (max-width: 550px) {
+  .hideOnSmall {
+    display: none !important;
+  }
+}

@@ -1,0 +1,20 @@
+.noDefaultLinkUI {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  word-break: keep-all;
+  transition: 0.3s all ease-in-out;
+}
+
+.listItem:hover {
+  background-color: #eee;
+}
