@@ -1,0 +1,28 @@
+.textFormat {
+  font-size: 1.6rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.StoryListContainer {
+  /* margin-top: 1.5rem; */
+}
+
+.header {
+  display: flex;
+  width: 65%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  color: var(--black);
+  border: 1px solid #e8e8e8;
+  background-color: #f8f8f8;
+}
+
+@media (max-width: 900px) {
+  .header {
+    width: 100%;
+  }
+}
