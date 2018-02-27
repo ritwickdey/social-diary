@@ -30,9 +30,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={this.appStore}>
-        <div>
+        <div style={{ marginBottom: '2rem' }}>
           <LoadingPage />
-          {this.state.isLoaded ? <AppRouter /> : <p>Loading...</p>}
+          {this.state.isLoaded && <AppRouter />}
         </div>
       </Provider>
     );
