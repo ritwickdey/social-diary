@@ -10,8 +10,8 @@ const StoryList = props => {
       <div styleName="StoryListContainer">
         <div styleName="header">
           <div>Story Name</div>
-          <div>Author</div>
-          <div>Published Date</div>
+          <div className="hideOnExtraSmall">Author</div>
+          <div className="hideOnExtraSmall">Published Date</div>
         </div>
         {props.stories.length === 0 ? (
           <p styleName="textFormat">No Stories</p>

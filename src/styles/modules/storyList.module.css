@@ -10,10 +10,11 @@
 
 .header {
   display: flex;
-  width: 65%;
+  width: 100%;
+  max-width: 73rem;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: 1.5rem 0;
   padding: 1.5rem;
   color: var(--black);
@@ -21,8 +22,3 @@
   background-color: #f8f8f8;
 }
 
-@media (max-width: 900px) {
-  .header {
-    width: 100%;
-  }
-}

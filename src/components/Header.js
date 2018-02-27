@@ -30,6 +30,7 @@ const Header = props => {
           ) : (
             <span>
               <NavLink
+                className="hideOnExtraSmall"
                 styleName="navLink"
                 to="/dashboard"
                 activeClassName={style.navLinkActive}
