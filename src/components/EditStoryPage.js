@@ -11,11 +11,7 @@ class EditStoryPage extends React.Component {
       .startDeleteStory(this.props.story.id)
       .then(() => this.props.history.push('/myStory'));
   };
-  onSubmitHandle = story => {
-    this.props
-      .startEditStory(this.props.story.id, story)
-      .then(e => this.props.history.push(e.id ? `/read/${e.id}` : '/myStory'));
-  };
+  
   render() {
     return (
       <div>
@@ -25,7 +21,6 @@ class EditStoryPage extends React.Component {
           submitBtnTitle="Edit Story"
           onSubmit={this.onSubmitHandle}
         />
-        <button onClick={this.onDeleteHandle}>Delete Story</button>
       </div>
     );
   }
