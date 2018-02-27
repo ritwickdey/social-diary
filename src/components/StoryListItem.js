@@ -16,7 +16,7 @@ export const StoryListItem = props => (
         {props.story.uName.split(' ')[0]}
       </p>
       <p style={{ flex: 1 }} className="hideOnExtraSmall ">
-        {moment(props.story.postedAt).format('DDD MMM, YY')}
+        {moment(props.story.postedAt).format('DD MMM, YY')}
       </p>
     </div>
   </Link>
