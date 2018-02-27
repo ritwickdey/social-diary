@@ -12,7 +12,6 @@ install:
   - yarn install
 
 script:
-  - yarn test
   - yarn build
 
 deploy:

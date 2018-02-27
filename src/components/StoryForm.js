@@ -65,6 +65,15 @@ class StoryForm extends Component {
                   name="body"
                   placeholder="What's happening?"
                 />
+                <p
+                  style={{
+                    float: 'right',
+                    marginTop: '-.6rem',
+                    fontSize: '1rem'
+                  }}
+                >
+                  HTML tags are supported
+                </p>
               </div>
               <button styleName="btn" type="submit">
                 {this.props.submitBtnTitle || 'Create'}
