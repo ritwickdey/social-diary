@@ -16,6 +16,6 @@ _(This app is built with React with Redux architecture)_
 * Redux Architecture
 * React Routing
 * CSS Modules
-* Firestrom Database
+* Firestore Database
 * Firebase Authentication
 * Travis & GitLab CI to deploy
