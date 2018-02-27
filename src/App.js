@@ -3,13 +3,14 @@ import { Provider } from 'react-redux';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
-import './App.css';
 import { AppRouter } from './routes/AppRouter';
 import firebase from './firebase/firestore';
 import { store } from './store/configureStore';
 import { startSetStory } from './actions/stories';
 import { loginUser, logoutUser } from './actions/user';
 import LoadingPage from './components/loadingPage';
+
+import './App.css';
 
 class App extends Component {
   appStore = store();
