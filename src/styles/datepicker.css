@@ -1,0 +1,46 @@
+/*
+    global
+*/
+.DateRangePicker,
+.DateRangePickerInput {
+  max-width: 35rem;
+}
+.DateRangePickerInput {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.DateInput_input__focused {
+  border-bottom: 2px solid var(--color2);
+}
+
+.CalendarDay__selected_span,
+.CalendarDay__selected_span:active,
+.CalendarDay__selected_span:hover {
+  background: var(--color3);
+  border: 1px solid var(--color3);
+}
+
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+  background: var(--color2);
+  border: 1px solid var(--color2);
+}
+
+.CalendarDay__hovered_span,
+.CalendarDay__hovered_span:active,
+.CalendarDay__hovered_span:hover {
+  background: var(--color3);
+  border: 1px solid var(--color3);
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .DateRangePicker,
+  .DateRangePickerInput {
+    max-width: 100%;
+    width: 100%;
+  }
+}
