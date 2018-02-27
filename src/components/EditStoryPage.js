@@ -5,13 +5,12 @@ import StoryForm from './StoryForm';
 import { startEditStory, startDeleteStory } from '../actions/stories';
 
 class EditStoryPage extends React.Component {
-  onDeleteHandle = () => {
-    if (!window.confirm('are you sure to delete?')) return;
+  onSubmitHandle = story => {
     this.props
-      .startDeleteStory(this.props.story.id)
-      .then(() => this.props.history.push('/myStory'));
+      .startEditStory(this.props.story.id, story)
+      .then(e => this.props.history.push(e.id ? `/read/${e.id}` : '/myStory'));
   };
-  
+
   render() {
     return (
       <div>
