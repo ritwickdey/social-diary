@@ -1,0 +1,57 @@
+ /* https://codepen.io/ritwickdey/pen/WMdpyE */
+
+.loader-root-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  background: rgba(219, 219, 219, 0.47);
+}
+
+.loader-container {
+  height: 12em;
+  width: 12em;
+  position: relative;
+  display: block;
+}
+
+.cicle-loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  border: 0.8em solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+
+  animation: rotating 1.5s 1s infinite both;
+}
+
+.cicle-loader::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -0.8em;
+  left: -0.8em;
+  display: inline-block;
+  border: 0.8em solid transparent;
+  border-top-color: var(--color2);
+  border-radius: 50%;
+  box-sizing: content-box;
+
+  animation: rotating 1.5s infinite both;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
