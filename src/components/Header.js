@@ -31,6 +31,13 @@ const Header = props => {
             <span>
               <NavLink
                 styleName="navLink"
+                to="/dashboard"
+                activeClassName={style.navLinkActive}
+              >
+                Timeline
+              </NavLink>
+              <NavLink
+                styleName="navLink"
                 to="/create"
                 activeClassName={style.navLinkActive}
               >

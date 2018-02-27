@@ -53,7 +53,7 @@
   background-color: var(--color3);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .navHeaderContainer {
     text-align: center;
     flex-direction: column;
