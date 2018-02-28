@@ -23,3 +23,17 @@ _(This app is built with React with Redux architecture)_
 * Firebase Authentication
 * Responsive UI with pure CSS (No library :smile:)
 * Travis & GitLab CI to deploy
+
+## Screenshots
+
+* Screenshot 1
+![Screenshots 1](https://pbs.twimg.com/media/DXHk1hsU0AIZCKq.jpg)
+
+* Screenshot 2
+![Screenshots 2](https://pbs.twimg.com/media/DXHmN8hU8AArwlh.jpg)
+
+* Screenshot 3
+![Screenshots 3](https://pbs.twimg.com/media/DXHlGv5U0AEkYpx.jpg)
+
+* Screenshot 4
+![Screenshots 4](https://pbs.twimg.com/media/DXHlTFnVMAEBn1L.jpg)

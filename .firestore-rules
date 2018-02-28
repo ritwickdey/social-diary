@@ -7,7 +7,7 @@ service cloud.firestore {
       allow create : if  request.resource.data.uId == request.auth.uid;
     }
 
-     match /{document=**} {
+    match /{document=**} {
       allow read : if false; 
       allow write : if false;
     }
