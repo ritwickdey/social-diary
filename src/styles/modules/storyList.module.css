@@ -15,6 +15,7 @@
   justify-content: space-between;
   font-size: 1.6rem;
   margin: 1.5rem 0;
+  margin-bottom: 0;
   padding: 1.5rem;
   color: var(--black);
   border: 1px solid #e8e8e8;

@@ -1,6 +1,11 @@
 .noDefaultLinkUI {
+  display: block;
   color: var(--black);
   text-decoration: none;
+}
+
+.noDefaultLinkUI:nth-child(odd) {
+  background-color: #f8f8f8;
 }
 
 .listItem {
