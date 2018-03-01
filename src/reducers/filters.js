@@ -1,17 +1,12 @@
-import moment from 'moment';
-
 const defaultFilterState = () => ({
   filterText: '',
-  startDate: moment().startOf('month'),
-  endDate: moment().endOf('month'),
+  startDate: null,
+  endDate: null,
   orderBy: 'desc',
   sortBy: 'date'
 });
 
-export const filterReducers = (
-  state = defaultFilterState(),
-  action
-) => {
+export const filterReducers = (state = defaultFilterState(), action) => {
   switch (action.type) {
     case 'SET_START_DATE':
       return { ...state, startDate: action.startDate };

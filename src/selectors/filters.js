@@ -5,11 +5,14 @@ export const filterStories = (stories = [], filters = {}) => {
     .filter(story => {
       const isStartDateMatched = !filters.startDate
         ? true
-        : moment(story.postedAt).isSameOrAfter(moment(filters.startDate));
+        : moment(story.postedAt).isSameOrAfter(
+            moment(filters.startDate),
+            'day'
+          );
 
       const isEndDateMatched = !filters.endDate
         ? true
-        : moment(story.postedAt).isSameOrBefore(moment(filters.endDate));
+        : moment(story.postedAt).isSameOrBefore(moment(filters.endDate), 'day');
 
       const isTextMatched = !filters.filterText
         ? true

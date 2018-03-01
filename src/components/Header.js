@@ -7,60 +7,57 @@ import { startLogout } from '../actions/user';
 
 import style from '../styles/modules/header.module.css';
 
-const Header = props => {
-  console.log(props);
-  return (
-    <div styleName="navHeader">
-      <div styleName="navHeaderContainer" className="container">
-        <div styleName="brand">
-          <Link styleName="headLine" to="/">
-            Social Diary
-          </Link>
-          <p styleName="subHeader">Share your story with others</p>
-        </div>
-        <div styleName="navLinks">
-          {!props.user ? (
+const Header = props => (
+  <div styleName="navHeader">
+    <div styleName="navHeaderContainer" className="container">
+      <div styleName="brand">
+        <Link styleName="headLine" to="/">
+          Social Diary
+        </Link>
+        <p styleName="subHeader">Share your story with others</p>
+      </div>
+      <div styleName="navLinks">
+        {!props.user ? (
+          <NavLink
+            styleName="navLink"
+            to="/login"
+            activeClassName={style.navLinkActive}
+          >
+            login
+          </NavLink>
+        ) : (
+          <span>
             <NavLink
+              className="hideOnExtraSmall"
               styleName="navLink"
-              to="/login"
+              to="/dashboard"
               activeClassName={style.navLinkActive}
             >
-              login
+              Timeline
             </NavLink>
-          ) : (
-            <span>
-              <NavLink
-                className="hideOnExtraSmall"
-                styleName="navLink"
-                to="/dashboard"
-                activeClassName={style.navLinkActive}
-              >
-                Timeline
-              </NavLink>
-              <NavLink
-                styleName="navLink"
-                to="/create"
-                activeClassName={style.navLinkActive}
-              >
-                Add Story
-              </NavLink>
-              <NavLink
-                styleName="navLink"
-                to="/myStory"
-                activeClassName={style.navLinkActive}
-              >
-                My Story
-              </NavLink>
-              <button styleName="navLink" onClick={() => props.startLogout()}>
-                logout
-              </button>
-            </span>
-          )}
-        </div>
+            <NavLink
+              styleName="navLink"
+              to="/create"
+              activeClassName={style.navLinkActive}
+            >
+              Add Story
+            </NavLink>
+            <NavLink
+              styleName="navLink"
+              to="/myStory"
+              activeClassName={style.navLinkActive}
+            >
+              My Story
+            </NavLink>
+            <button styleName="navLink" onClick={() => props.startLogout()}>
+              logout
+            </button>
+          </span>
+        )}
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 const mapStateToProps = state => ({
   user: state.user

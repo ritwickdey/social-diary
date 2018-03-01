@@ -18,7 +18,7 @@ class App extends Component {
   state = { isLoaded: false };
 
   componentDidMount() {
-    this.appStore.subscribe(() => console.log(this.appStore.getState()));
+    // this.appStore.subscribe(() => console.log(this.appStore.getState()));
     this.appStore.dispatch(startSetStory()).then(() => {
       this.setState({ isLoaded: true });
     });
